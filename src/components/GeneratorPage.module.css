@@ -1,0 +1,530 @@
+.page {
+  padding-top: 96px;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Progress Bar ---------- */
+.progressBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 48px;
+  gap: 0;
+}
+
+.progressStep {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.progressDot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.progressDotActive {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border-color: transparent;
+  color: white;
+}
+
+.progressLabel {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-left: 8px;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.progressLabelActive {
+  color: var(--text-primary);
+}
+
+.progressLine {
+  width: 60px;
+  height: 2px;
+  background: var(--border);
+  margin: 0 12px;
+  transition: background 0.3s ease;
+}
+
+.progressLineActive {
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+}
+
+/* ---------- Error Banner ---------- */
+.errorBanner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(225, 112, 85, 0.1);
+  border: 1px solid rgba(225, 112, 85, 0.25);
+  color: var(--error);
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+  animation: fadeIn 0.3s ease;
+}
+
+.errorClose {
+  margin-left: auto;
+  background: none;
+  color: var(--error);
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.errorClose:hover {
+  background: rgba(225, 112, 85, 0.15);
+}
+
+/* ---------- Section ---------- */
+.section {
+  animation: fadeInUp 0.5s ease;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.sectionHeader h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.sectionHeader p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+/* ---------- Dropzone ---------- */
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-xl);
+  padding: 64px 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--bg-card);
+}
+
+.dropzone:hover {
+  border-color: var(--accent);
+  background: rgba(108, 92, 231, 0.04);
+}
+
+.dropzoneActive {
+  border-color: var(--accent);
+  background: rgba(108, 92, 231, 0.08);
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.dropzoneContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.dropzoneIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.15), rgba(0, 206, 201, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-light);
+  margin-bottom: 8px;
+}
+
+.dropzoneContent h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.dropzoneContent p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.dropzoneFormats {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ---------- Preview Card ---------- */
+.previewCard {
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.previewImageWrap {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.removeImageBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.removeImageBtn:hover {
+  background: var(--error);
+  transform: scale(1.1);
+}
+
+.previewInfo {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.previewMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+}
+
+.previewName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.previewSize {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.analyzeBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.analyzeBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+.analyzeBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* ---------- Prompt Layout ---------- */
+.promptLayout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 24px;
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.promptImageSide {
+  overflow: hidden;
+}
+
+.promptImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 360px;
+}
+
+.promptEditorSide {
+  padding: 24px 24px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.promptEditorHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.promptTextarea {
+  width: 100%;
+  flex: 1;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.promptTextarea:focus {
+  border-color: var(--accent);
+}
+
+.promptActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.secondaryBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.secondaryBtn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+
+.generateBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.generateBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+/* ---------- Generating ---------- */
+.generatingCard {
+  text-align: center;
+  padding: 80px 32px;
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.generatingSpinner {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinnerRing {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  animation: spin 1.2s linear infinite;
+}
+
+.spinnerIcon {
+  color: var(--accent-light);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.generatingCard h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.generatingMsg {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  min-height: 24px;
+}
+
+.generatingHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(108, 92, 231, 0.08);
+  color: var(--accent-light);
+  font-size: 0.8rem;
+}
+
+/* ---------- Result ---------- */
+.resultCard {
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.videoWrapper {
+  width: 100%;
+  background: #000;
+}
+
+.videoPlayer {
+  width: 100%;
+  display: block;
+  max-height: 540px;
+}
+
+.resultActions {
+  padding: 24px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.downloadBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--success), #00a884);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.downloadBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 184, 148, 0.3);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .progressBar {
+    gap: 0;
+  }
+
+  .progressLine {
+    width: 24px;
+    margin: 0 4px;
+  }
+
+  .progressLabel {
+    display: none;
+  }
+
+  .promptLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .promptImageSide {
+    max-height: 200px;
+  }
+
+  .promptImage {
+    min-height: auto;
+    max-height: 200px;
+  }
+
+  .promptEditorSide {
+    padding: 24px;
+  }
+
+  .promptActions {
+    flex-direction: column;
+  }
+
+  .previewInfo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .resultActions {
+    flex-direction: column;
+  }
+
+  .sectionHeader h1 {
+    font-size: 1.5rem;
+  }
+}
